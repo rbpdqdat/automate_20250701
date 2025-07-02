@@ -1,7 +1,5 @@
 name: first
 
-on: [push]
-
 on:
     push:
         branches:
