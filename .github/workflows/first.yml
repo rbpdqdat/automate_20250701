@@ -2,6 +2,13 @@ name: first
 
 on: [push]
 
+on:
+    push:
+        branches:
+        - '!main'
+    pull_request:
+        branches:
+        - '!main'
 jobs:
     job1: 
         name: First job
@@ -14,6 +21,7 @@ jobs:
     job2:
         name: Second job
         runs-on: windows-latest
+        needs: job1
         steps:
         - name: Step 1
           uses: actions/checkout@v2
