@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     job1:
-        name: JOB1
+        name: JOB1-ubuntu
         runs-on: ubuntu-latest
         steps:
         - name: Step 1
@@ -12,7 +12,7 @@ jobs:
         - name: Step 2
           run: echo date
     job2:
-        name: JOB2
+        name: JOB2-windows
         runs-on: windows-latest
         steps:
         - name: Step 1
@@ -20,7 +20,7 @@ jobs:
         - name: Step 2  
           run: echo %date% 
     job3:
-        name: JOB3
+        name: JOB3-macos
         runs-on: macos-latest
         steps:
         - name: Step 1
@@ -28,13 +28,13 @@ jobs:
         - name: Step 2  
           run: echo date
     job4:
-        name: JOB4
+        name: JOB4-ubuntu
         runs-on: ubuntu-latest
         needs: [job1, job2, job3]
         steps:
         - name: Step 1
           uses: actions/checkout@v2
         - name: Step 2
-            run: | 
-            echo "All jobs completed successfully"
-            echo date
+          run: |
+               echo "All jobs completed successfully"
+               echo date
