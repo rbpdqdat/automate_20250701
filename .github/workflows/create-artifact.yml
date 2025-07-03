@@ -1,0 +1,20 @@
+name: Challenge 1 - Create Artifact
+
+on:
+    push:
+        branches:
+        - main
+
+jobs:
+    create-artifact:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+
+        - name: Set file name
+          run: echo "FILE_NAME=100daysofcode.py" >> $GITHUB_ENV
+
+        - uses: actions/upload-artifact@v1.0.0
+          with:
+            name: ${{ env.FILE_NAME }}
+            path: ../../
