@@ -12,9 +12,11 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Set file name
-          run: echo "FILE_NAME=100daysofcode.py" >> $GITHUB_ENV
-
+          run: |
+               echo "FILE_NAME=100daysofcode.py" >> $GITHUB_ENV
+               ls -la
+               pwd
         - uses: actions/upload-artifact@v4
           with:
             name: ${{ env.FILE_NAME }}
-            path: ~/${{ env.FILE_NAME }}
+            path: ${{ github.workspace}}/${{ env.FILE_NAME }}
