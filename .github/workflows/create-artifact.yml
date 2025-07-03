@@ -3,7 +3,7 @@ name: Challenge 1 - Create Artifact
 on:
     push:
         branches:
-        - main
+        - '!main'
 
 jobs:
     create-artifact:
