@@ -14,7 +14,7 @@ jobs:
         - name: Set file name
           run: echo "FILE_NAME=100daysofcode.py" >> $GITHUB_ENV
 
-        - uses: actions/upload-artifact@v1.0.0
+        - uses: actions/upload-artifact@v4
           with:
             name: ${{ env.FILE_NAME }}
             path: ../../
